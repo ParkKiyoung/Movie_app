@@ -1,49 +1,20 @@
 import React from 'react';
+import axios from 'axios';
 
 //클래스형 컴포넌트 작성하기
 class App extends React.Component{ //이게 기본 뼈대임
-  //생명주기 알아봄
-  constructor(props){
-    super(props);
-    console.log('construct')
-  }
-
-  state = {
-    count : 0,
-  }
-  add = ()=>{
-    this.setState(current =>({
-      count : current.count +1,
-    }))
-  }
-  minus = () =>{
-    this.setState(current =>({
-      count : current.count -1,
-    }))
+  state ={
+    isLoading : true,
+    movies:[],
   }
 
   componentDidMount(){
-    //컴포넌트가 마운트되고 난뒤
-    console.log('console rendered')
-  }
-  componentDidUpdate(){
-    //컴포넌트가 업데이트 되었을때
-    console.log('component updated')
-  }
-  componentWillUnmount(){
-    //컴포넌트가 화면에서 떠날때
-    console.log('component Unmount')
+    axios.get('https://yts-proxy.now.sh/list_movies.json')
   }
 
   render(){
-    console.log('render')
-    return (
-      <div>
-        <h1>this number is {this.state.count}</h1>
-        <button onClick={this.add}>Add</button>
-        <button onClick={this.minus}>Minus</button>
-      </div>
-    )
+    const {isLoading} = this.state;
+    return <div > { isLoading ? 'Loading...':'We Ready'}</div>
   }
 }
 
