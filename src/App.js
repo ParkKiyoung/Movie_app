@@ -37,16 +37,16 @@ const ships = [
 
 ];
 
+function renderShip(ship){
+  return <Ships name={ship.name} picture={ship.image}/>
+}
 
 function App() {
   return  (
       <div>
         {/* props에 있는 데이터는 문자열인 경우를 제외하면 중괄호로 감싸야함 */}
-        {
-          ships.map(
-            ship => (<Ships name={ship.name} picture={ship.image}/>)
-            )
-        }
+        {ships.map(renderShip)}
+        {/* 함수를 사용하여 리턴 시켜줄수 있음 */}
       </div>
     );
 }
