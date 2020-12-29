@@ -4,10 +4,13 @@ import {HashRouter,Route} from 'react-router-dom';
 //라우터 기능 임포트
 import About from './routes/About';
 import Home from './routes/Home';
+import Navigation from './component/Navigation';
 
 function App(){
   return (
     <HashRouter>
+      <Navigation/>
+      {/* Link Router 컴포넌트는 반드시 HashRoute안에 있어야한다. */}
       <Route path="/about" component={About}/>
       <Route path="/" exact={true} component={Home}/>
       {/* Route에는 2가지 props를 전달할수 있는데 URL PATH, URL에 맞는 컴포넌트를 불러주기 위한 component props 
