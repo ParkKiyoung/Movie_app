@@ -33,6 +33,9 @@ class Home extends React.Component{ //이게 기본 뼈대임
   componentDidMount(){
     this.getMovies();
   }
+  componentWillUnmount(){
+    console.log("Home Unmount")
+  }
 
   render(){
     const {isLoading , movies} = this.state;

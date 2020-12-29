@@ -5,7 +5,7 @@ import {HashRouter,Route} from 'react-router-dom';
 import About from './routes/About';
 import Home from './routes/Home';
 import Navigation from './component/Navigation';
-import Detail from './routes/Detail';
+import Detail from './component/Detail';
 
 function App(){
   return (
