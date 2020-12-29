@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Movie from './Movie';
+import './App.css';
 
 //클래스형 컴포넌트 작성하기
 class App extends React.Component{ //이게 기본 뼈대임
@@ -49,6 +50,7 @@ class App extends React.Component{ //이게 기본 뼈대임
               title = {movie.title}
               summary = {movie.summary}
               poster = {movie.medium_cover_image}
+              genres = {movie.genres}
             />
           ))}
         </div>
