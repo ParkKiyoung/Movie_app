@@ -6,10 +6,10 @@ function About(props){
     return (
         <div className="about__container">
             <span>
-                "시작이 느리기 때문에 더열심히 해야해"
+                "인생은 마라톤"
             </span>
             <span>
-                20201229
+                어딘가에서
             </span>
         </div>
     )
